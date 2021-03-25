@@ -39,7 +39,10 @@ public class BookController {
     public ResponseEntity<Set<Book>> updateBookById(@RequestBody BookRequest book, @PathVariable int bookId) {
         for (Book singleBook: books) {
             if(singleBook.getId() == bookId){
-                singleBook.setTitle(book.getTitle());
+                //Remove the book to be updated
+                books.remove(singleBook);
+                //Add an entirely new book with the same book id and different title
+                books.add(new Book(bookId, book.getTitle()));
                 break;
             }
         }
