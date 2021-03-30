@@ -1,4 +1,4 @@
-package com.library.LibraryApp;
+package com.library.LibraryApp.dtos;
 
 import java.util.Objects;
 

@@ -37,9 +37,9 @@ public class BookServiceImpl implements BookService {
         Book bookUpdated = null;
         for (Book singleBook : books) {
             if(singleBook.getId() == bookId){
-                books.remove(singleBook);
-                bookUpdated = new Book(bookId, book.getTitle());
-                books.add(bookUpdated);
+                singleBook.setTitle(book.getTitle());
+                books.add(singleBook);
+                bookUpdated = singleBook;
                 break;
             }
         }
